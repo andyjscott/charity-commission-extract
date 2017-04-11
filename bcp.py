@@ -7,7 +7,7 @@ def convert(bcpdata, lineterminator='*@@*', delimiter='@**@', quote='"', newdeli
     returns data from a string of BCP data. Default is to present as CSV data.
     """
     bcpdata = bcpdata.replace(escapechar, escapechar + escapechar)
-    bcpdata = bcpdata.replace(quote, escapechar + quote)
+    bcpdata = bcpdata.replace(quote, quote + quote)
     bcpdata = bcpdata.replace(delimiter, quote + newdelimiter + quote)
     bcpdata = bcpdata.replace(lineterminator, quote + newline + quote)
     bcpdata = quote + bcpdata + quote
